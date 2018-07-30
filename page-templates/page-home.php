@@ -5,8 +5,6 @@ Template Name: Página Inicial
 get_header();
 ?>
 
-
-
 <div class="map-area-transform">
 	<svg xmlns="http://www.w3.org/2000/svg" class="mapa-svg-estados-svg" width="802" height="642" viewBox="0 0 802 642" class="a">
 		<g id="mapa-svg-area">
@@ -179,34 +177,39 @@ get_header();
 
 <section class="states-lists">
 	<?php
-	$custom_terms = get_terms('states');
-	foreach($custom_terms as $custom_term) {
-		wp_reset_query();
-		$args = array(
-			'post_type' 			=> 'local-sites',
-			'tax_query' 			=> array(
-				array(
-					'taxonomy'		=> 'states',
-					'field' 			=> 'slug',
-					'terms' 			=> $custom_term->slug,
+		$custom_terms = get_terms(array(
+			'taxonomy'					=> 'states',
+			'hide_empty'				=> false,
+		));
+		foreach($custom_terms as $custom_term) {
+			wp_reset_query();
+			$args = array(
+				'post_type' 			=> 'local-sites',
+				'tax_query' 			=> array(
+					array(
+						'taxonomy'		=> 'states',
+						'field' 			=> 'slug',
+						'terms' 			=> $custom_term->slug,
+					),
 				),
-			),
-		);
-		$loop = new WP_Query($args);
-		if($loop->have_posts()) { ?>
-			<div class="<?php echo $custom_term->slug ?> ">
-				<h2><?php echo $custom_term->name ?></h2>
-				<ul>
-					<?php
-					while($loop->have_posts()) : $loop->the_post();
-						echo '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
-					endwhile;
-					?>
-				</ul>
+			);
+			$loop = new WP_Query($args);
+			?>
+			<div class="<?php echo $custom_term->slug ?> hidden">
+				<h2><?php echo $custom_term->name ?></h2><?php
+				if($loop->have_posts()) { ?>
+					<ul>
+						<?php
+							while($loop->have_posts()) : $loop->the_post();
+								echo '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
+							endwhile;
+						?>
+					</ul>
+				<?php } else { ?>
+					<p>Não há</p>
+				<?php } ?>
 			</div>
-			<?php
-			}
-		}
+		<?php }
 	?>
 </section>
 
