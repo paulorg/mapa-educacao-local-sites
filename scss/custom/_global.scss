@@ -3,6 +3,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+section{
+  padding: 2rem 0;
+}
+footer{
+  h2{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+  }
+  ul{
+    list-style: none;
+  }
+}
 
 @include media-breakpoint-up(lg){
 

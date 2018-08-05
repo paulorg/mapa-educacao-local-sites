@@ -1,6 +1,19 @@
 (function ($) {
 
 	mapControl();
+	smoothScroll();
+
+	function smoothScroll(){
+		$('a[href^="#"]').on('click', function(event) {
+			var target = $(this.getAttribute('href'));
+			if( target.length ) {
+				event.preventDefault();
+				$('html, body').stop().animate({
+					scrollTop: target.offset().top
+				}, 1000);
+			}
+		});
+	}
 
 	function mapControl() {
 		function moveUpestado(thisObject) {
@@ -15,7 +28,7 @@
 			var selectedState = $(this).attr('id');
 			$('.states-lists > div').addClass('hidden');
 			$('.states-lists .'+selectedState ).removeClass('hidden');
-			console.log(selectedState);
+			$('html, body').stop().animate({ scrollTop: $('.unities').offset().top }, 1000);
 		});
 
 		$('.class-select > option').each(function () {
@@ -23,9 +36,13 @@
 		});
 
 		$('.class-select').change(function () {
-			$('.' + $(this).val() + '-class').siblings().removeClass('mapa-svg-estados-active');
-			$('.' + $(this).val() + '-class').addClass('mapa-svg-estados-active');
-			moveUpestado($('.' + $(this).val() + '-class'));
+			var selectedState = $(this).val();
+			$('#' + selectedState).siblings().removeClass('mapa-svg-estados-active');
+			$('#' + selectedState).addClass('mapa-svg-estados-active');
+			moveUpestado($('#' + selectedState));
+			$('.states-lists > div').addClass('hidden');
+			$('.states-lists .'+selectedState ).removeClass('hidden');
+			$('html, body').stop().animate({ scrollTop: $('.unities').offset().top }, 1000);
 		});
 
 	}
