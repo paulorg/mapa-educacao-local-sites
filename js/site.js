@@ -1,17 +1,29 @@
 (function ($) {
 
 	mapControl();
+	showUnityInfo();
 	smoothScroll();
 
 	function smoothScroll(){
-		$('a[href^="#"]').on('click', function(event) {
+		$('a[href^="#"]').on('click', function(e) {
 			var target = $(this.getAttribute('href'));
 			if( target.length ) {
-				event.preventDefault();
+				e.preventDefault();
 				$('html, body').stop().animate({
 					scrollTop: target.offset().top
 				}, 1000);
 			}
+		});
+	}
+
+	function showUnityInfo(){
+		$('.unities-list a').on('click', function(e) {
+			var jqThis = $(this);
+			var currentUnity = jqThis.data('local');
+			$('.modal-content > div').addClass('hidden');
+			$('.modal-content .'+currentUnity).removeClass('hidden');
+			$('.unity-card').modal('show');
+			e.preventDefault();
 		});
 	}
 
@@ -44,6 +56,6 @@
 			$('.states-lists .'+selectedState ).removeClass('hidden');
 			$('html, body').stop().animate({ scrollTop: $('.unities').offset().top }, 1000);
 		});
-
 	}
+
 })(jQuery);

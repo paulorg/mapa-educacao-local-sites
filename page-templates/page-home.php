@@ -22,7 +22,7 @@ get_header();
 				</div>
 			</div>
 			<article class="col-lg-4">
-				<p>Somos um movimento para reforçar o direito de todos os brasileiros ao acesso a educação de qualidade e acreditamos que o jovem deve ser o protagonista dessa mudança.</p>
+				<p><?php _e('Somos um movimento para reforçar o direito de todos os brasileiros ao acesso a educação de qualidade e acreditamos que o jovem deve ser o protagonista dessa mudança.', 'mapa-educacao') ?></p>
 				<a href="" class="btn btn-block btn-ghost btn-lg"><?php _e('Conheça nossos projetos', 'mapa-educacao') ?></a>
 				<a href="" class="btn btn-block btn-primary btn-lg"><?php _e('Acesse nosso site', 'mapa-educacao') ?></a>
 			</article>
@@ -202,38 +202,39 @@ get_header();
 				</div>
 			</div>
 			<div class="col-lg-6">
-				<h2><?php _e('Nossa rede conta com 72 unidades locais', 'mapa-educacao') ?></h2>
+				<?php $count_posts = wp_count_posts( 'local-sites' )->publish; ?>
+				<h2><?php _e('Nossa rede conta com '. $count_posts .' unidades locais', 'mapa-educacao') ?></h2>
 				<p class="d-none d-lg-block"><?php _e('Clique no mapa ao lado para encontrar uma unidade próxima de você', 'mapa-educacao') ?></p>
 				<p class="d-lg-none"><?php _e('Escolha um estado abaixo para encontrar uma unidade próxima de você', 'mapa-educacao') ?></p>
 				<select class="d-lg-none class-select" name="estados-brasil-sotreq">
-					<option value="" disabled selected>Escolha um estado</option>
-					<option value="acre">Acre</option>
-					<option value="alagoas">Alagoas</option>
-					<option value="amapa">Amapá</option>
-					<option value="amazonas">Amazonas</option>
-					<option value="bahia">Bahia</option>
-					<option value="ceara">Ceará</option>
-					<option value="distrito-federal">Distrito Federal</option>
-					<option value="espirito-santo">Espírito Santo</option>
-					<option value="goias">Goiás</option>
-					<option value="maranhao">Maranhão</option>
-					<option value="mato-grosso">Mato Grosso</option>
-					<option value="mato-grosso-do-sul">Mato Grosso do Sul</option>
-					<option value="minas-gerais">Minas Gerais</option>
-					<option value="para">Pará</option>
-					<option value="paraiba">Paraíba</option>
-					<option value="parana">Paraná</option>
-					<option value="pernambuco">Pernambuco</option>
-					<option value="piaui">Piauí</option>
-					<option value="rio-de-janeiro">Rio de Janeiro</option>
-					<option value="rio-grande-do-norte">Rio Grande do Norte</option>
-					<option value="rio-grande-do-sul">Rio Grande do Sul</option>
-					<option value="rondonia">Rondônia</option>
-					<option value="roraima">Roraima</option>
-					<option value="santa-catarina">Santa Catarina</option>
-					<option value="sao-paulo">São Paulo</option>
-					<option value="sergipe">Sergipe</option>
-					<option value="tocantins">Tocantins</option>
+					<option value="" disabled selected><?php _e('Escolha um estado', 'mapa-educacao') ?></option>
+					<option value="acre"><?php _e('Acre', 'mapa-educacao') ?></option>
+					<option value="alagoas"><?php _e('Alagoas', 'mapa-educacao') ?></option>
+					<option value="amapa"><?php _e('Amapá', 'mapa-educacao') ?></option>
+					<option value="amazonas"><?php _e('Amazonas', 'mapa-educacao') ?></option>
+					<option value="bahia"><?php _e('Bahia', 'mapa-educacao') ?></option>
+					<option value="ceara"><?php _e('Ceará', 'mapa-educacao') ?></option>
+					<option value="distrito-federal"><?php _e('Distrito Federal', 'mapa-educacao') ?></option>
+					<option value="espirito-santo"><?php _e('Espírito Santo', 'mapa-educacao') ?></option>
+					<option value="goias"><?php _e('Goiás', 'mapa-educacao') ?></option>
+					<option value="maranhao"><?php _e('Maranhão', 'mapa-educacao') ?></option>
+					<option value="mato-grosso"><?php _e('Mato Grosso', 'mapa-educacao') ?></option>
+					<option value="mato-grosso-do-sul"><?php _e('Mato Grosso do Sul', 'mapa-educacao') ?></option>
+					<option value="minas-gerais"><?php _e('Minas Gerais', 'mapa-educacao') ?></option>
+					<option value="para"><?php _e('Pará', 'mapa-educacao') ?></option>
+					<option value="paraiba"><?php _e('Paraíba', 'mapa-educacao') ?></option>
+					<option value="parana"><?php _e('Paraná', 'mapa-educacao') ?></option>
+					<option value="pernambuco"><?php _e('Pernambuco', 'mapa-educacao') ?></option>
+					<option value="piaui"><?php _e('Piauí', 'mapa-educacao') ?></option>
+					<option value="rio-de-janeiro"><?php _e('Rio de Janeiro', 'mapa-educacao') ?></option>
+					<option value="rio-grande-do-norte"><?php _e('Rio Grande do Norte', 'mapa-educacao') ?></option>
+					<option value="rio-grande-do-sul"><?php _e('Rio Grande do Sul', 'mapa-educacao') ?></option>
+					<option value="rondonia"><?php _e('Rondônia', 'mapa-educacao') ?></option>
+					<option value="roraima"><?php _e('Roraima', 'mapa-educacao') ?></option>
+					<option value="santa-catarina"><?php _e('Santa Catarina', 'mapa-educacao') ?></option>
+					<option value="sao-paulo"><?php _e('São Paulo', 'mapa-educacao') ?></option>
+					<option value="sergipe"><?php _e('Sergipe', 'mapa-educacao') ?></option>
+					<option value="tocantins"><?php _e('Tocantins', 'mapa-educacao') ?></option>
 				</select>
 			</div>
 		</div>
@@ -262,27 +263,66 @@ get_header();
 				?>
 				<div class="row <?php echo $custom_term->slug ?> hidden">
 					<div class="col-lg-4">
-						<h2>Unidades</h2>
+						<h2><?php _e('Unidades', 'mapa-educacao') ?></h2>
 						<h3><?php echo $custom_term->name ?></h3>
-						<p>(<a href="#map">Trocar</a>)</p>
-						<p>Não encontrou uma unidade perto de você? Fale com a gente e descubra como fazer parte:</p>
-						<a href="" class="btn btn-block btn-ghost btn-lg"><?php _e('Entre em contato', 'mapa-educacao') ?></a>
+						<p>(<a href="#map"><?php _e('Trocar', 'mapa-educacao') ?></a>)</p>
+						<p><?php _e('Não encontrou uma unidade perto de você? Fale com a gente e descubra como fazer parte:', 'mapa-educacao') ?></p>
+						<a href="#" class="btn btn-block btn-ghost btn-lg"><?php _e('Entre em contato', 'mapa-educacao') ?></a>
 					</div>
 					<?php
 						if($loop->have_posts()) { ?>
-						<ul class="col-lg-8">
+						<ul class="col-lg-8 unities-list">
 							<?php
 								while($loop->have_posts()) : $loop->the_post();
-									echo '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
+									echo '<li><a href="" data-local="'.$post->post_name.'">'.get_the_title().'</a></li>';
 								endwhile;
 							?>
 						</ul>
 					<?php } else { ?>
-						<p>Ainda não há nenhuma unidade local em <?php echo $custom_term->name ?>.</p>
+						<p><?php _e('Ainda não há nenhuma unidade local neste estado.', 'mapa-educacao') ?></p>
 					<?php } ?>
 				</div>
-			<?php }
+			<?php } wp_reset_query();
 		?>
 	</div>
 </section>
+
+<div class="modal fade unity-card" tabindex="-1" role="dialog" aria-labelledby="UnityInfo" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<?php
+				$args = array(
+					'post_type'              => array( 'local-sites' ),
+					'post_status'            => array( 'publish' ),
+					'order'                  => 'ASC',
+					'orderby'                => 'title',
+				);
+				$query = new WP_Query( $args );
+				if ( $query->have_posts() ) {
+					while ( $query->have_posts() ) {
+						$query->the_post();
+				?>
+				<div class="<?php echo $post->post_name; ?> hidden">
+					<h2><?php the_title(); ?></h2>
+					<?php
+						$images = rwmb_meta( 'local_lider_picture' );
+						$image = reset( $images );
+					?>
+					<img src="<?php echo $image['url']; ?>">
+					<h3><?php echo rwmb_meta( 'local_lider' ); ?></h3>
+					<div class="external-links">
+						<?php if( rwmb_meta( 'local_facebook' ) != '') { ?><a href="<?php echo rwmb_meta( 'local_facebook' ); ?>" class="btn btn-block btn-ghost" target="_blank"><?php _e('Siga no Facebook', 'mapa-educacao') ?></a><?php } ?>
+						<?php if( rwmb_meta( 'local_contact' ) != '') { ?><a href="<?php echo rwmb_meta( 'local_contact' ); ?>" class="btn btn-block btn-primary" target="_blank"><?php _e('Entre em contato', 'mapa-educacao') ?></a><?php } ?>
+					</div>
+					<?php the_content(); ?>
+				</div>
+
+			<?php } } wp_reset_postdata(); ?>
+		</div>
+	</div>
+</div>
+
+
+
+
 <?php get_footer(); ?>
