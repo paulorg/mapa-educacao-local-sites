@@ -1,3 +1,279 @@
+// Global Styles
+
 .hidden{
   display: none;
+}
+
+
+// Hero
+
+.hero{
+  background: $purple;
+  padding:{
+    bottom: 5rem;
+    top: 5rem;
+  }
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  h1{
+    color: $white;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+    & + .btn{
+      margin-top: 1rem;
+    }
+  }
+  &:before{
+    background: url('http://mapaeducacao.com/novosite/wp-content/uploads/2018/09/hero.jpg') no-repeat center center;
+    background-size: cover;
+    bottom: 0;
+    content: '';
+    display: block;
+    filter: grayscale(100%);
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -2;
+  }
+  &:after{
+    background: rgba($blue, .85);
+    bottom: -30%;
+    content: '';
+    display: block;
+    position: absolute;
+    left: -30%;
+    right: -30%;
+    top: -30%;
+    z-index: -1;
+  }
+}
+
+// About
+
+.about{
+  padding:{
+    bottom: 4rem;
+    top: 4rem;
+  }
+  position: relative;
+  margin-top: 0;
+  z-index: 0;
+  article{
+    background: $blue;
+    color: $white;
+    margin: 0 15px;
+    padding: 40px;
+    h2{
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 2.5rem;
+      & + p{
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        margin-top: 1rem;
+        strong{
+          color: $yellow;
+          font-weight: 400;
+        }
+        & + .btn{
+          margin-top: 2rem;
+        }
+      }
+    }
+    .btn{
+      & + .btn{
+        margin-top: 1rem;
+      }
+    }
+    .btn-ghost{
+      border-color: $yellow;
+      color: $yellow;
+      &:hover, &:active, &:focus{
+        background-color: $yellow;
+        color: darken($blue, 5%);
+      }
+    }
+  }
+  &:before{
+    background: $yellow;
+    bottom: 7rem;
+    content: '';
+    display: block;
+    left: 0;
+    mix-blend-mode: multiply;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  &:after{
+    background: url('http://mapaeducacao.com/novosite/wp-content/uploads/2018/09/about.jpg') no-repeat center center;
+    background-size: cover;
+    bottom: 7rem;
+    content: '';
+    display: block;
+    filter: grayscale(100%);
+    left: 0;
+    opacity: .25;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+}
+
+// Map
+
+.map{
+  z-index: 10;
+  h2{
+    font-size: 2.5rem;
+    font-style: italic;
+    line-height: 2.8125rem;
+    position: relative;
+    & + p{
+      font-size: 1.125rem;
+      line-height: 1.5;
+      margin-top: 2rem;
+    }
+  }
+}
+
+// Unities
+
+.unities{
+  margin-top: -8rem;
+  z-index: 5;
+  transition: background 1s;
+  .container{
+    background: $white;
+    padding:{
+      bottom: 5rem;
+      top: 10rem;
+    }
+  }
+  .unities-list{
+    list-style: none;
+    margin-top: 4rem;
+    li{
+      a{
+        color: $blue;
+        font-weight: 700;
+        img{
+          height: auto;
+          margin-right: 1rem;
+          max-height: 3rem;
+          max-width: 3rem;
+          width: 100%;
+        }
+        &:hover, &:active, &:focus{
+          color: lighten($blue, 10%);
+          text-decoration: none;
+        }
+      }
+      & + li{
+        margin-top: 2rem;
+      }
+    }
+  }
+  div{
+    & + p{
+      margin-top: 1rem;
+    }
+  }
+  h2{
+    color: $purple;
+    font-size: 2rem;
+    font-style: italic;
+    line-height: 1;
+    & + a{
+      color: $green;
+      font-style: italic;
+      & + p{
+        margin-top: 2rem;
+        & + .btn{
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+  &.active{
+    background: linear-gradient(45deg, $blue 0%, $pink 100%);
+    margin-bottom: 5rem;
+  }
+}
+
+@include media-breakpoint-up(md){
+  .hero{
+    padding:{
+      bottom: 10rem;
+      top: 13rem;
+    }
+    h1{
+      font-size: 3rem;
+      line-height: 3.5rem;
+      & + .btn{
+        margin-top: 2rem;
+      }
+    }
+    &:after{
+      background: radial-gradient(circle, rgba(1,37,109,0.8) 0%, rgba(170,34,145,1) 100%);
+    }
+  }
+  .map{
+    h2{
+      margin-top: 4rem;
+    }
+  }
+  .unities{
+    div{
+      & + p{
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg){
+  .about{
+    margin-top: -6rem;
+    article{
+      margin: 0;
+    }
+    &:before{
+      left: 75px;
+    }
+    &:after{
+      left: 75px;
+    }
+  }
+  .map{
+    h2{
+      &:before{
+        background: $gray-700;
+        content: '';
+        display: block;
+        height: 1px;
+        left: -180px;
+        position: absolute;
+        top: 1.5rem;
+        width: 8rem;
+      }
+    }
+  }
+  .unities{
+    .unities-list{
+      margin-top: 0;
+      li{
+        a{
+          img{
+            max-height: 5rem;
+            max-width: 5rem;
+          }
+        }
+      }
+    }
+  }
 }

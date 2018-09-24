@@ -2,24 +2,267 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-section{
-  padding: 2rem 0;
+html{
+  font-size: 16px;
 }
+body{
+	position: relative;
+	& > header{
+		.main-nav{
+			background: rgba($purple, 1);
+      z-index: 1;
+			.navbar-brand{
+				color: $white;
+				padding: 0;
+				h1{
+					font-size: 1.25rem;
+					font-weight: 700;
+					line-height: 1.5rem;
+					margin: 0;
+					padding: .75rem 0;
+				}
+			}
+			.navbar-toggler{
+				background: url('http://mapaeducacao.com/novosite/wp-content/uploads/2018/09/navigation_icon.svg') no-repeat center center;
+				background-size: cover;
+				border: none;
+				height: 2rem;
+				width: 2rem;
+				&:hover, &:active, &:focus{
+					outline: none;
+				}
+			}
+      .navbar-nav{
+        box-shadow: inset 0 1px 0 0 rgba($white, .5);
+        padding: .5rem 0 0;
+        margin: .5rem 0 0;
+        li{
+          a{
+            color: $white;
+            font-size: 1rem;
+            line-height: 1.5;
+          }
+        }
+      }
+		}
+	}
+}
+
 footer{
-  h2, p{
+  h2{
     display: inline-block;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1;
     text-align: center;
     width: 100%;
   }
   ul{
     list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    li{
+      a{
+        display: inline-block;
+        padding: 0 20px;
+        text-align: center;
+        width: 100%;
+        img{
+          height: auto;
+          max-width: 80%;
+        }
+      }
+    }
+    & + h2{
+      margin-top: 6rem;
+      & + ul{
+        li{
+          a{
+            padding: 0 40px;
+          }
+        }
+      }
+    }
   }
+  p{
+    font-size: 0.875rem;
+    line-height: 1rem;
+    margin-top: 5rem;
+    text-align: center;
+  }
+}
+
+// Modal
+
+.unity-card{
+  .lider-card{
+    background: linear-gradient(45deg, $blue 0%, $pink 100%);
+    color: $white;
+    height: 100%;
+    padding: 3rem;
+    p{
+      font-size: 1.125rem;
+      font-style: italic;
+      line-height: 1.5rem;
+      margin: 0;
+      & + h2{
+        font-size: 2rem;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 1;
+        margin: .5rem 0 0;
+        position: relative;
+        &:after{
+          bottom: -1rem;
+          box-shadow: inset 0 1px 0 0 rgba($white, .5);
+          content: '';
+          height: 1px;
+          left: 0;
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+    .lider-name{
+      margin:{
+        bottom: 2rem;
+        top: 4rem;
+      }
+      text-align: center;
+      h3{
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        margin: 0;
+        & + p{
+          font-size: 1rem;
+          font-style: normal;
+          line-height: 1;
+          margin-top: .5rem;
+        }
+      }
+      img{
+        height: auto;
+        max-height: 8rem;
+        max-width: 8rem;
+        margin-bottom: 1rem;
+        width: 100%
+      }
+    }
+    .external-links{
+      a{
+        display: block;
+        font-size: 1.125rem;
+        font-style: italic;
+        line-height: 1.5rem;
+        margin: 0;
+        padding: 0;
+        text-indent: 2rem;
+        & + a{
+          margin-top: 1rem;
+        }
+        &.email{
+          background: url('http://mapaeducacao.com/novosite/wp-content/uploads/2018/09/email.svg') no-repeat;
+          background-size: 1.5rem 1.5rem;
+        }
+        &.facebook{
+          background: url('http://mapaeducacao.com/novosite/wp-content/uploads/2018/09/facebook.svg') no-repeat;
+          background-size: 1.5rem 1.5rem;
+        }
+      }
+    }
+  }
+  .lider-content{
+    background: $white;
+    height: 100%;
+    padding: 3rem 3rem 3rem calc(3rem - 30px);
+  }
+}
+
+// Bootstrap Overrides
+
+.btn{
+  border-radius: 2px;
+  &.btn-primary{
+    color: darken($blue, 5%);
+    font-weight: 500;
+    padding: calc(.5rem - 1px) 20px;
+    text-transform: uppercase;
+    &:hover, &:active, &:focus{
+      background: lighten($primary, 10%);
+      border: 1px solid lighten($primary, 10%);
+      color: darken($blue, 5%);
+    }
+  }
+  &.btn-ghost{
+    border: 1px solid $gray-800;
+    color: $gray-800;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: calc(.5rem - 1px) 20px;
+    text-transform: uppercase;
+  }
+}
+
+.modal{
+  background: linear-gradient(45deg, rgba(darken($green, 10%), .8) 0%, rgba($green, .8) 100%);
+}
+
+select.class-select{
+  border-radius: 2px;
+  font-size: 1rem;
+  height: 3rem;
+  line-height: 1;
+  padding: 0 15px;
+  width: 100%;
 }
 
 @include media-breakpoint-up(lg){
 
 }
 @include media-breakpoint-up(md){
-
+  body{
+    & > header{
+      padding: 1rem 0;
+      margin-bottom: -8rem;
+      .main-nav{
+        background: transparent;
+        .container{
+          position: relative;
+          padding-bottom: 1rem;
+          &:before{
+            background: rgba($white, .2);
+            bottom: 0;
+            content: '';
+            display: block;
+            height: 1px;
+            left: 15px;
+            position: absolute;
+            right: 15px;
+          }
+        }
+  			.navbar-brand{
+          background: url('http://mapaeducacao.com/novosite/wp-content/uploads/2018/09/logo_mapa.svg') no-repeat left center;
+          background-size: contain;
+          display: inline-block;
+          height: 4rem;
+          overflow: hidden;
+          padding: 0;
+          text-indent: -5000px;
+          width: 200px;
+        }
+        .navbar-nav{
+          box-shadow: none;
+          padding: 0;
+          margin: 0;
+          li{
+            a{
+              font-size: .875rem;
+              line-height: 1rem;
+            }
+          }
+        }
+  		}
+  	}
+  }
 }

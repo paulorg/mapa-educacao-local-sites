@@ -22,7 +22,7 @@ function create_meta_boxes( $meta_boxes ) {
 			),
 			array(
 				'id' => $prefix . 'local_contact',
-				'type' => 'url',
+				'type' => 'text',
 				'name' => esc_html__( 'Link para contato', 'mapa-educacao' ),
 			),
 			array(

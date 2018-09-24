@@ -6,35 +6,43 @@ svg text{
   font-size: 12px;
 }
 .mapa-svg-estados-svg{
-	margin-left: -120px;
-	width: 150%;
+	margin-top: -104px;
+	margin-left: -200px;
+	width: 160%;
 }
 .mapa-svg-estados {
-	fill: #CCC;
+	fill: darken($green, 5%);
 	transition: .8s ease;
 	stroke-dasharray: 180%;
-	stroke-dashoffset: -120%;
-	stroke-width: 2px;
-	stroke: #333;
+	stroke-dashoffset: 0%;
+	stroke-width: 1.5px;
+	stroke: $white;
 }
 .mapa-svg-estados text {
+	display: none;
 	stroke:none
 }
 
 .mapa-svg-estados:hover {
 	cursor: pointer;
-	fill: #BBB;
+	fill: $green;
 }
 
 .mapa-svg-estados-active {
 	cursor: pointer;
 	stroke: transparent;
-	fill: green;
+	fill: $yellow;
+	stroke-dasharray: 180%;
 	stroke-dashoffset: 0%;
+	stroke-width: 1px;
+	stroke: $white;
 	-webkit-transition: .8s ease;
 	-moz-transition: .8s ease;
 	-ms-transition: .8s ease;
 	-o-transition: .8s ease;
+}
+.mapa-svg-estados-active:hover {
+	fill: lighten($yellow, 10%);
 }
 .mapa-svg-estados-active text{
 	stroke: none;

@@ -20,6 +20,7 @@
 		$('.unities-list a').on('click', function(e) {
 			var jqThis = $(this);
 			var currentUnity = jqThis.data('local');
+			$('.unities').addClass('active');
 			$('.modal-content > div').addClass('hidden');
 			$('.modal-content .'+currentUnity).removeClass('hidden');
 			$('.unity-card').modal('show');
@@ -35,6 +36,7 @@
 		$('.mapa-svg-estados').click(function () {
 			$(this).siblings().removeClass('mapa-svg-estados-active');
 			$(this).addClass('mapa-svg-estados-active');
+			$('.unities').addClass('active');
 			$('.class-select').val($(this).attr('id')).trigger('change');
 			moveUpestado($(this));
 			var selectedState = $(this).attr('id');
@@ -51,6 +53,7 @@
 			var selectedState = $(this).val();
 			$('#' + selectedState).siblings().removeClass('mapa-svg-estados-active');
 			$('#' + selectedState).addClass('mapa-svg-estados-active');
+			$('.unities').addClass('active');
 			moveUpestado($('#' + selectedState));
 			$('.states-lists > div').addClass('hidden');
 			$('.states-lists .'+selectedState ).removeClass('hidden');

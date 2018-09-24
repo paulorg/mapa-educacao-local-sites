@@ -6,37 +6,39 @@ get_header();
 ?>
 <section class="hero">
 	<article class="container">
-		<h1><?php _e('Encontre uma unidade mapa perto de você', 'mapa-educacao') ?></h1>
-		<a href="#map" class="btn btn-primary btn-lg"><?php _e('Encontre um líder local na sua cidade', 'mapa-educacao') ?></a>
+		<div class="row">
+			<div class="col-lg-6">
+				<h1><?php _e('Encontre uma unidade do <strong>Mapa Educação perto de você</strong>', 'mapa-educacao') ?></h1>
+				<a href="#map" class="btn btn-primary"><?php _e('Encontre um líder local<span class="d-none d-md-inline text-truncate"> na sua cidade</span>', 'mapa-educacao') ?></a>
+			</div>
+		</div>
 	</article>
 </section>
-<section class="hero">
+<section class="about">
 	<div class="container">
-		<div class="row">
-			<h2 class="col text-center"><?php _e('O Mapa quer que todos os brasileiros tenham acesso a uma educação de qualidade', 'mapa-educacao') ?></h1>
-		</div>
 		<div class="row justify-content-between align-items-center">
 			<div class="col-lg-7">
-				<div class="embed-responsive embed-responsive-16by9">
+				<!-- <div class="embed-responsive embed-responsive-16by9">
 					<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KP5KPm6Ir9o?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-				</div>
+				</div> -->
 			</div>
 			<article class="col-lg-4">
-				<p><?php _e('Somos um movimento para reforçar o direito de todos os brasileiros ao acesso a educação de qualidade e acreditamos que o jovem deve ser o protagonista dessa mudança.', 'mapa-educacao') ?></p>
-				<a href="" class="btn btn-block btn-ghost btn-lg"><?php _e('Conheça nossos projetos', 'mapa-educacao') ?></a>
-				<a href="" class="btn btn-block btn-primary btn-lg"><?php _e('Acesse nosso site', 'mapa-educacao') ?></a>
+				<h2><?php _e('Queremos que todos os brasileiros tenham acesso a uma <strong>educação de qualidade</strong>', 'mapa-educacao') ?></h2>
+				<p><?php _e('Somos um <strong>movimento</strong> para reforçar o direito de todos os brasileiros ao <strong>acesso a educação de qualidade</strong> e acreditamos que o jovem deve ser o protagonista dessa mudança.', 'mapa-educacao') ?></p>
+				<a href="http://mapaeducacao.com/#about" class="btn btn-block btn-ghost btn-lg" target="_blank"><?php _e('Conheça nossos projetos', 'mapa-educacao') ?></a>
+				<a href="http://mapaeducacao.com/" class="btn btn-block btn-primary" target="_blank"><?php _e('Acesse nosso site', 'mapa-educacao') ?></a>
 			</article>
 		</div>
 	</div>
 </section>
 <section class="map" id="map">
 	<div class="container">
-		<div class="row align-items-center">
-			<div class="d-none d-lg-block col-lg-6">
+		<div class="row justify-content-lg-between justify-content-center">
+			<div class="d-none d-lg-block col-lg-8">
 				<div class="map-area-transform">
-					<svg xmlns="http://www.w3.org/2000/svg" class="mapa-svg-estados-svg" viewBox="0 0 802 642" class="a">
+					<svg xmlns="http://www.w3.org/2000/svg" class="mapa-svg-estados-svg" viewBox="0 0 802 544" class="a">
 						<g id="mapa-svg-area">
-							<g class="mapa-svg-estados state-go-class" id="goiania">
+							<g class="mapa-svg-estados state-go-class" id="goias">
 								<path
 								d="M461.9 266.5L463.7 268.4 462.7 269.3 462.5 271.1 463.5 272.6 462.4 273.2 461.5 275.9 462 279.8 463.1 281.9 465.3 283.9 464.8 285.8 465.4 287.5 464.2 289.4 463.4 290.2 461.2 289.9 459 287.7 458.2 288.8 458.5 291.3 456.2 291 454.9 291.4 454.4 295.6 455.1 297.5 455.4 300.6 450.5 302.5 449.9 301.9 450.4 297.5 449.2 296.5 441 296.3 440 300.2 441 302.5 450.5 302.5 450.2 304.7 448.8 307.6 450.9 309.5 452.1 312.7 450.1 315.1 448 318.3 450.6 319.4 450.9 320.7 449.9 322.8 450.7 325.2 447.7 326.9 446.7 328.2 444.1 329.6 440.2 328.5 434.2 328.5 432.7 328.2 430.8 329.1 428.3 331.6 426.9 330.1 423.7 331.6 421.6 331.4 418 332.6 416 335.2 415.8 337 414.5 337.1 412.4 339.2 411.1 341.2 409.5 339.1 407.6 338.8 406.3 337.7 403.8 337.3 399.4 335.2 398.1 334.1 396.3 333.7 394.8 332.5 390.7 332.2 391.6 329.6 388.6 327.8 388.7 324.7 386.6 319.9 387.1 316.4 388.8 313.7 389.7 311.2 391.3 310.4 393.1 308.1 392.9 305.3 394.4 303.6 396.4 302.5 397.8 300.8 401.1 299.9 403.1 296.2 403.7 293.3 405.2 291.6 407.3 290.4 408.9 290.7 409.6 289.7 411.1 285.4 410.8 284.2 411.6 281.1 412.3 281 412.3 276.6 415.3 271.5 415.4 269 416.3 267.1 416.7 265.4 418.5 263.1 419.3 265 418.5 266.4 418.9 268 424.9 270.7 427.7 271.5 430.7 265.8 431.6 265.2 434.1 267.4 434.7 269.8 435.9 270.8 441.1 270.7 446.7 272.6 445.9 270.7 449 271.5 452.7 269.8 456.1 269.4 457.5 267.9Z"
 								class="b"/>
@@ -201,9 +203,9 @@ get_header();
 					</svg>
 				</div>
 			</div>
-			<div class="col-lg-6">
+			<div class="col-10 col-lg-3">
 				<?php $count_posts = wp_count_posts( 'local-sites' )->publish; ?>
-				<h2><?php _e('Nossa rede conta com '. $count_posts .' unidades locais', 'mapa-educacao') ?></h2>
+				<h2><?php _e('Nossa rede conta com <strong>'. $count_posts .' líderes locais</strong>', 'mapa-educacao') ?></h2>
 				<p class="d-none d-lg-block"><?php _e('Clique no mapa ao lado para encontrar uma unidade próxima de você', 'mapa-educacao') ?></p>
 				<p class="d-lg-none"><?php _e('Escolha um estado abaixo para encontrar uma unidade próxima de você', 'mapa-educacao') ?></p>
 				<select class="d-lg-none class-select" name="estados-brasil-sotreq">
@@ -261,25 +263,26 @@ get_header();
 				);
 				$loop = new WP_Query($args);
 				?>
-				<div class="row <?php echo $custom_term->slug ?> hidden">
-					<div class="col-lg-4">
-						<h2><?php _e('Unidades', 'mapa-educacao') ?></h2>
-						<h3><?php echo $custom_term->name ?></h3>
-						<p>(<a href="#map"><?php _e('Trocar', 'mapa-educacao') ?></a>)</p>
+				<div class="row justify-content-around <?php echo $custom_term->slug ?> hidden">
+					<div class="col-10 col-lg-4">
+						<h2><?php echo $custom_term->name ?></h2>
+						<a href="#map"><?php _e('Trocar', 'mapa-educacao') ?></a>
 						<p><?php _e('Não encontrou uma unidade perto de você? Fale com a gente e descubra como fazer parte:', 'mapa-educacao') ?></p>
-						<a href="#" class="btn btn-block btn-ghost btn-lg"><?php _e('Entre em contato', 'mapa-educacao') ?></a>
+						<a href="http://mapaeducacao.com/contato/" class="btn btn-block btn-primary"><?php _e('Entre em contato', 'mapa-educacao') ?></a>
 					</div>
 					<?php
 						if($loop->have_posts()) { ?>
-						<ul class="col-lg-8 unities-list">
+						<ul class="col-10 col-lg-5 unities-list">
 							<?php
 								while($loop->have_posts()) : $loop->the_post();
-									echo '<li><a href="" data-local="'.$post->post_name.'">'.get_the_title().'</a></li>';
+									$images = rwmb_meta( 'local_lider_picture' );
+									$image = reset( $images );
+									echo '<li class="text-truncate"><a href="" data-local="'.$post->post_name.'"><img src="'.$image['url'].'" class="img-fluid rounded-circle"/>'.rwmb_meta( 'local_lider' ).'</a></li>';
 								endwhile;
 							?>
 						</ul>
 					<?php } else { ?>
-						<p><?php _e('Ainda não há nenhuma unidade local neste estado.', 'mapa-educacao') ?></p>
+						<p class="col-10 col-lg-5"><?php _e('Ainda não há nenhuma unidade local neste estado.', 'mapa-educacao') ?></p>
 					<?php } ?>
 				</div>
 			<?php } wp_reset_query();
@@ -303,18 +306,32 @@ get_header();
 						$query->the_post();
 				?>
 				<div class="<?php echo $post->post_name; ?> hidden">
-					<h2><?php the_title(); ?></h2>
-					<?php
-						$images = rwmb_meta( 'local_lider_picture' );
-						$image = reset( $images );
-					?>
-					<img src="<?php echo $image['url']; ?>">
-					<h3><?php echo rwmb_meta( 'local_lider' ); ?></h3>
-					<div class="external-links">
-						<?php if( rwmb_meta( 'local_facebook' ) != '') { ?><a href="<?php echo rwmb_meta( 'local_facebook' ); ?>" class="btn btn-block btn-ghost" target="_blank"><?php _e('Siga no Facebook', 'mapa-educacao') ?></a><?php } ?>
-						<?php if( rwmb_meta( 'local_contact' ) != '') { ?><a href="<?php echo rwmb_meta( 'local_contact' ); ?>" class="btn btn-block btn-primary" target="_blank"><?php _e('Entre em contato', 'mapa-educacao') ?></a><?php } ?>
+					<div class="row">
+						<div class="col-lg-5">
+							<div class="lider-card">
+								<p><?php _e('Unidade', 'mapa-educacao') ?></p>
+								<h2><?php the_title(); ?></h2>
+								<div class="lider-name">
+									<?php
+										$images = rwmb_meta( 'local_lider_picture' );
+										$image = reset( $images );
+									?>
+									<img class="img-fluid rounded-circle" src="<?php echo $image['url']; ?>">
+									<h3><?php echo rwmb_meta( 'local_lider' ); ?></h3>
+									<p><?php _e('Líder local', 'mapa-educacao') ?></p>
+								</div>
+								<div class="external-links">
+									<?php if( rwmb_meta( 'local_facebook' ) != '') { ?><a href="<?php echo rwmb_meta( 'local_facebook' ); ?>" class="facebook" target="_blank"><?php _e('Siga no Facebook', 'mapa-educacao') ?></a><?php } ?>
+									<?php if( rwmb_meta( 'local_contact' ) != '') { ?><a href="mailto:<?php echo rwmb_meta( 'local_contact' ); ?>" class="email" target="_blank"><?php _e('Entre em contato', 'mapa-educacao') ?></a><?php } ?>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<div class="lider-content">
+								<?php the_content(); ?>
+							</div>
+						</div>
 					</div>
-					<?php the_content(); ?>
 				</div>
 
 			<?php } } wp_reset_postdata(); ?>
