@@ -97,6 +97,21 @@
       }
     }
   }
+  .launch-video{
+    background: rgba($white, .1) url('http://mapaeducacao.com/novosite/wp-content/uploads/2018/09/play_icon.svg') no-repeat center center;
+    border: 1px solid $white;
+    border-radius: 8rem;
+    display: inline-block;
+    height: 8rem;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    text-indent: -5000px;
+    transition: all .2s;
+    width: 8rem;
+    &:hover, &:active, &:focus{
+      background: rgba($white, .5) url('http://mapaeducacao.com/novosite/wp-content/uploads/2018/09/play_icon.svg') no-repeat center center;
+    }
+  }
   &:before{
     background: $yellow;
     bottom: 7rem;
@@ -241,6 +256,11 @@
     margin-top: -6rem;
     article{
       margin: 0;
+    }
+    .launch-video{
+      height: 12rem;
+      margin-top: -3rem;
+      width: 12rem;
     }
     &:before{
       left: 75px;

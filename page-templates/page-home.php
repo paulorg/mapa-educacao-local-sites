@@ -17,10 +17,8 @@ get_header();
 <section class="about">
 	<div class="container">
 		<div class="row justify-content-between align-items-center">
-			<div class="col-lg-7">
-				<!-- <div class="embed-responsive embed-responsive-16by9">
-					<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KP5KPm6Ir9o?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-				</div> -->
+			<div class="col-lg-8 text-center">
+				<a href="" class="launch-video" data-toggle="modal" data-target="#video"><?php _e('Assistir ao vídeo', 'mapa-educacao') ?></a>
 			</div>
 			<article class="col-lg-4">
 				<h2><?php _e('Queremos que todos os brasileiros tenham acesso a uma <strong>educação de qualidade</strong>', 'mapa-educacao') ?></h2>
@@ -290,6 +288,18 @@ get_header();
 	</div>
 </section>
 
+<div id="video" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Video" aria-hidden="true">
+	<div class="modal-dialog modal-lg modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-body">
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe class="embed-responsive-item" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="modal fade unity-card" tabindex="-1" role="dialog" aria-labelledby="UnityInfo" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
@@ -333,13 +343,9 @@ get_header();
 						</div>
 					</div>
 				</div>
-
 			<?php } } wp_reset_postdata(); ?>
 		</div>
 	</div>
 </div>
-
-
-
 
 <?php get_footer(); ?>

@@ -3,6 +3,7 @@
 	mapControl();
 	showUnityInfo();
 	smoothScroll();
+	videoControl();
 
 	function smoothScroll(){
 		$('a[href^="#"]').on('click', function(e) {
@@ -13,6 +14,15 @@
 					scrollTop: target.offset().top
 				}, 1000);
 			}
+		});
+	}
+
+	function videoControl(){
+		$('#video').on('shown.bs.modal', function (e) {
+		  $('.embed-responsive-item').attr('src', 'https://www.youtube.com/embed/KP5KPm6Ir9o?rel=0&amp;showinfo=0&autoplay=1');
+		});
+		$('#video').on('hidden.bs.modal', function (e) {
+		  $('.embed-responsive-item').attr('src', '');
 		});
 	}
 
